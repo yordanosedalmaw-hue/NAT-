@@ -20,7 +20,13 @@
       "om": "🥩 Foon loonii ykn lukkuu bilcheeffame 🧀 Chiizii baqee 🥬 Salaaxaa 🍅 Timaatimii murame",
       "ti": "🥩 ዝተጠበሰ ስጋ ብዕራይ ወይ ደርሆ 🧀 ዝቐለጠ ቺዝ 🥬 ለቱስ 🍅 ቁራጽ ቲማቲም"
     },
-    "price": "600"
+    "price": "600",
+    "order": {
+      "en": "ORDER NOW",
+      "am": "አሁን ይዘዙ",
+      "om": "AMMA AJAAJI",
+      "ti": "ሕጂ ኣዝዝ"
+    },
   },
   {
     "image": "/images/menuimg/pasta.png",
@@ -42,6 +48,12 @@
       "om": "🍝 Paastaa haaraa 🧀 Chiizii Paarmeezan 🥬 Kuduraalee haaraa 🍗 Lukkuu ykn loon",
       "ti": "🍝 ሓዲሽ ፓስታ 🧀 ፓርሜዛን ቺዝ 🥬 ሓደሽቲ ኣሕምልቲ 🍗 ደርሆ ወይ ስጋ ብዕራይ"
     },
-    "price": "340"
+    "price": "340",
+    "order": {
+      "en": "ORDER NOW",
+      "am": "አሁን ይዘዙ",
+      "om": "AMMA AJAAJI",
+      "ti": "ሕጂ ኣዝዝ"
+    },
   }
 ]
