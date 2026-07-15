@@ -20,10 +20,10 @@
  `;
  login.textContent=menu[0].button.login[lan];
   document.getElementById("home").addEventListener("click", () => {
-    loadpag("menu1.html")
+    loadpag("index.html")
     });
      document.getElementById("special_menu").addEventListener("click", () => {
-    loadpag("specialmenu.html")
+    loadpag("Specialmenu.html")
 });
       document.getElementById("menu").addEventListener("click", () => {
     loadpag("menu.html")
