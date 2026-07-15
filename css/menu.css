@@ -267,7 +267,7 @@ body h1{
 }
 @media (max-width: 600px) {
     body{
-        padding: 50px;
+        padding: 10px;
     }
     .head{
         flex-direction: column;
