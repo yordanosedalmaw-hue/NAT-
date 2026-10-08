@@ -131,10 +131,7 @@ function displayMenu(items) {
         
     event.stopPropagation(); 
 });
- detailcard.addEventListener("click", (event) => {
-        
-    event.stopPropagation(); 
-});
+
 
 document.addEventListener("click", (event) => {
     
