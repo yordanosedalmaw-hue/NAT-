@@ -136,10 +136,16 @@ function displayMenu(items) {
     event.stopPropagation(); 
 });
 
-document.addEventListener("click", () => {
+document.addEventListener("click", (event) => {
     
-    languges.style.display = "none";
-   detailcard.style.display="none";
+    if (!languges.contains(event.target) && event.target !== lachooser) {
+        languges.style.display = "none";
+    }
+
+   
+    if (!detailcard.contains(event.target)) {
+        detailcard.style.display = "none";
+    }
 });
     const Amharic=document.getElementById("Amharic");
     const English=document.getElementById("English");
