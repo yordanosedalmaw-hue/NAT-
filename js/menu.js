@@ -46,7 +46,7 @@ let menuData = [];
     .catch(error => console.error(error));  
 function displayMenu(items) {
     const container = document.querySelector(".cards");
-    const cancel=document.getElementById("Cancel");
+    
     const displaycard_img=document.getElementById("displaycard_img");
     const displaycard_h2=document.getElementById("displaycard_h2");
     const detail=document.getElementById("detail");
@@ -56,9 +56,7 @@ function displayMenu(items) {
     const displaycard_fat=document.getElementById("displaycard_fat");
     const displaycard_price=document.getElementById("displaycard_price");
     container.innerHTML = ""; // Clear old cards
-    cancel.addEventListener("click",()=>{
-        detailcard.style.display="none";
-    })
+   
     items.forEach(item => {
         const card = document.createElement("div");
         card.className = "card";
@@ -69,30 +67,45 @@ function displayMenu(items) {
             <p>${item.title[languge]}</p>
             <span class="price">$${item.price}</span>
         `;
-        card.addEventListener("click", () => {
+card.addEventListener("click", (event) => {
+    event.stopPropagation();
+
     displaycard_img.src = item.image;
     displaycard_h2.textContent = item.name[languge];
 
-    // clear old ingredients
     detail.innerHTML = "";
 
     if (item.ingredients && item.ingredients.length > 0) {
         item.ingredients.forEach(ingredient => {
             const li = document.createElement("li");
-            li.textContent =ingredient.icon +" "+ingredient.name[languge];
+            li.textContent =
+                ingredient.icon + " " + ingredient.name[languge];
             detail.appendChild(li);
-            
         });
-    } else {
-        const li = document.createElement("li");
-        li.textContent = "No ingredients available";
-        detail.appendChild(li);
     }
-    displaycard_kcal.textContent=item.nutrition[0].icon+" "+item.nutrition[0].name[languge]+":-"+item.nutrition[0].value;
-    displaycard_pro.textContent=item.nutrition[1].icon+" "+item.nutrition[1].name[languge]+":-"+item.nutrition[1].value;
-    displaycard_car.textContent=item.nutrition[2].icon+" "+item.nutrition[2].name[languge]+":-"+item.nutrition[2].value;
-    displaycard_fat.textContent=item.nutrition[3].icon+" "+item.nutrition[3].name[languge]+":-"+item.nutrition[3].value;
-    displaycard_price.textContent=item.price;
+
+    displaycard_kcal.textContent =
+        item.nutrition[0].icon + " " +
+        item.nutrition[0].name[languge] + ": " +
+        item.nutrition[0].value;
+
+    displaycard_pro.textContent =
+        item.nutrition[1].icon + " " +
+        item.nutrition[1].name[languge] + ": " +
+        item.nutrition[1].value;
+
+    displaycard_car.textContent =
+        item.nutrition[2].icon + " " +
+        item.nutrition[2].name[languge] + ": " +
+        item.nutrition[2].value;
+
+    displaycard_fat.textContent =
+        item.nutrition[3].icon + " " +
+        item.nutrition[3].name[languge] + ": " +
+        item.nutrition[3].value;
+
+    displaycard_price.textContent = item.price;
+
     detailcard.style.display = "block";
 });
         container.appendChild(card);
@@ -204,5 +217,10 @@ search.addEventListener("input", () => {
     );
 
     displayMenu(results);
+});
+const cancel = document.getElementById("Cancel");
+
+cancel.addEventListener("click", () => {
+    detailcard.style.display = "none";
 });
 headmenu("en");
