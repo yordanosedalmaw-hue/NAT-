@@ -136,6 +136,7 @@ function displayMenu(items) {
 document.addEventListener("click", () => {
     
     languges.style.display = "none";
+   detailcard.style.display="none";
 });
     const Amharic=document.getElementById("Amharic");
     const English=document.getElementById("English");
